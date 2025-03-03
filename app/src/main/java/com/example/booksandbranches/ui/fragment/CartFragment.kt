@@ -193,7 +193,7 @@ class CartFragment : Fragment() {
         }
 
         val formatter = NumberFormat.getCurrencyInstance(Locale.US)
-//        binding.textSubtotal.text = formatter.format(subtotal)
+  //     binding.textSubtotal.text = formatter.format(subtotal)
 //        binding.textShipping.text = if (subtotal > 0) formatter.format(5.99) else formatter.format(0)
 //        binding.textTotal.text = if (subtotal > 0) formatter.format(subtotal + 5.99) else formatter.format(0)
 //        binding.textItemCount.text = "Items ($totalItems)"
