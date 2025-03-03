@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary brand colors - warm earth tones -->
+    <color name="deep_brown">#8B4513</color>         <!-- Saddle Brown - primary color -->
+    <color name="medium_brown">#A0522D</color>       <!-- Sienna - darker accent -->
+    <color name="light_brown">#CD853F</color>        <!-- Peru - lighter accent -->
+    <color name="accent_terracotta">#E07A5F</color>  <!-- Terracotta - warm accent -->
+
+    <!-- Background colors -->
+    <color name="background_cream">#F5F5DC</color>   <!-- Beige - main background -->
+    <color name="light_beige">#F8F0E3</color>        <!-- Lighter beige for surfaces -->
+    <color name="paper_beige">#E2D3E2</color>        <!-- Very light beige for cards -->
+    <color name="blue">#7BA9CE</color>   <!-- Beige - main background -->
+    <color name="pink">#E2A3ED</color>        <!-- Lighter beige for surfaces -->
+    <color name="purple">#898197</color>
+    <color name="gray">#878784</color>   <!-- Beige - main background -->
+            <!-- Very light beige for cards -->
+    <!-- Very light beige for cards -->
+
+    <!-- Text colors -->
+    <color name="text_dark_brown">#3E2723</color>    <!-- Very dark brown for primary text -->
+    <color name="text_medium_brown">#5D4037</color>  <!-- Medium-dark brown for secondary text -->
+
+    <!-- Other UI colors -->
+    <color name="ripple_color">#33A0522D</color>     <!-- 20% Sienna for ripple effects -->
+    <color name="divider">#D7CCC8</color>            <!-- Light taupe for dividers -->
+    <color name="error">#B71C1C</color>              <!-- Dark red for error states -->
+    <color name="success">#33691E</color>            <!-- Dark green for success states -->
+
+    <!-- Additional earth tones for variety -->
+    <color name="sage_green">#7D8C6C</color>         <!-- Sage green for accents -->
+    <color name="olive">#808000</color>              <!-- Olive for additional accent -->
+    <color name="sand">#C2B280</color>
+
+
+        <color name="colorPrimary">#1A1A1A</color> <!-- Warm Black -->
+        <color name="colorPrimaryDark">#000000</color> <!-- Darker Black -->
+        <color name="colorAccent">#BFA981</color> <!-- Orange for accents -->
+        <color name="textColorPrimary">#FFFFFF</color> <!-- White text -->
+        <color name="textColorSecondary">#CCCCCC</color> <!-- Light Grey text -->
+        <color name="backgroundColor">#D3D2BD</color> <!-- Warm Black background -->
+   <!-- Sand color for variety -->
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/productCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/paper_beige"
+    android:elevation="4dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <!-- Book Image -->
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="match_parent"
+        android:layout_height="428dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/one" />
+
+    <!-- Book Title -->
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Title"
+        android:textSize="16sp"
+        android:textColor="@color/text_dark_brown"
+        android:layout_marginTop="8dp" />
+
+    <!-- Book Author -->
+    <TextView
+        android:id="@+id/productAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Author Name"
+        android:textSize="14sp"
+        android:textColor="@color/gray" />
+
+    <!-- Book Price -->
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$12.99"
+        android:textSize="16sp"
+        android:textColor="@color/medium_brown"
+        android:layout_marginTop="8dp" />
+
+    <!-- Add to Cart Button -->
+    <Button
+        android:id="@+id/addToCartButton"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple"
+        android:text="Add to Cart"
+        android:textColor="@color/text_dark_brown" />
+
+</LinearLayout>

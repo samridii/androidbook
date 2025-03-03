@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/light_beige"
+    tools:context=".ui.fragment.BookDetailFragment">
+
+    <!-- Book Image -->
+    <ImageView
+        android:id="@+id/bookImage"
+        android:layout_width="match_parent"
+        android:layout_height="396dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/one" />
+
+    <!-- Book Title -->
+    <TextView
+        android:id="@+id/bookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark_brown"
+        tools:text="Steal Like an Artist" />
+
+    <!-- Book Author -->
+    <TextView
+        android:id="@+id/bookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        tools:text="Austin Kleon" />
+
+    <!-- Book Description -->
+    <TextView
+        android:id="@+id/bookDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/medium_brown"
+        tools:text="A book about creativity and inspiration." />
+
+    <!-- Book Price -->
+    <TextView
+        android:id="@+id/bookPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="@color/light_brown"
+        android:textStyle="bold"
+        tools:text="$12.99" />
+
+    <!-- Add to Cart Button -->
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Add to Cart"
+        android:backgroundTint="@color/paper_beige"
+        android:textColor="@color/deep_brown"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+</LinearLayout>

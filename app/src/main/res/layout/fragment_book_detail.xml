@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Book Image -->
+        <ImageView
+            android:id="@+id/bookImage"
+            android:layout_width="match_parent"
+            android:layout_height="387dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Book Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/one" />
+
+        <!-- Book Title -->
+        <TextView
+            android:id="@+id/bookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Book Author -->
+        <TextView
+            android:id="@+id/bookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Author Name"
+            android:textSize="18sp"
+            android:textColor="@color/background_cream"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Book Price -->
+        <TextView
+            android:id="@+id/bookPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$19.99"
+            android:textSize="20sp"
+            android:textColor="@color/text_dark_brown"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Book Description -->
+        <TextView
+            android:id="@+id/bookDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Borrow creativity, remix classics and ignite your innovative artistic fire"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Add to Cart Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:textColor="@color/light_beige"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

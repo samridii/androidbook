@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "144080258265",
+    "project_id": "booksandbranches-42bd1",
+    "storage_bucket": "booksandbranches-42bd1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144080258265:android:d4456da23d86cd240e2ac8",
+        "android_client_info": {
+          "package_name": "com.example.booksandbranches"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYu94b0EG-eGeNmsVeHqMR6f7DJVOKvdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
