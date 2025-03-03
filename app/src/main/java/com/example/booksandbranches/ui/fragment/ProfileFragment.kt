@@ -56,7 +56,7 @@ class ProfileFragment : Fragment() {
     private fun fetchCurrentUserDetails() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         if (userId != null) {
-            loadingUtils.show()
+            loadingUtils.showLoading()
             userViewModel.getCurrentUserDetails(userId) { userModel ->
                 loadingUtils.dismiss()
                 if (userModel != null) {
@@ -86,7 +86,7 @@ class ProfileFragment : Fragment() {
         val phone = binding.profilePhone.text.toString().trim()
 
         if (validateInputs(firstName, lastName, address, phone)) {
-            loadingUtils.show()
+            loadingUtils.showLoading()
             val updatedUser = currentUser.copy(
                 firstName = firstName,
                 lastName = lastName,
@@ -106,7 +106,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun deleteUserProfile() {
-        loadingUtils.show()
+        loadingUtils.showLoading()
         userViewModel.deleteUserProfile { success, message ->
             loadingUtils.dismiss()
             if (success) {

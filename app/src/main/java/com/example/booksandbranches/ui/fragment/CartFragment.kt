@@ -44,27 +44,27 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Check if the user is logged in
-        if (userId == null) {
-            Toast.makeText(requireContext(), "Please log in to view your cart", Toast.LENGTH_SHORT).show()
-            binding.emptyStateLayout.visibility = View.VISIBLE
-            binding.cartContentLayout.visibility = View.GONE
-            return
-        }
+//        if (userId == null) {
+//            Toast.makeText(requireContext(), "Please log in to view your cart", Toast.LENGTH_SHORT).show()
+//            binding.emptyStateLayout.visibility = View.VISIBLE
+//            binding.cartContentLayout.visibility = View.GONE
+//            return
+//        }
 
         setupRecyclerView()
         loadCartItems()
 
-        binding.swipeRefreshLayout.setOnRefreshListener {
-            loadCartItems()
-        }
+//        binding.swipeRefreshLayout.setOnRefreshListener {
+//            loadCartItems()
+//        }
 
-        binding.btnCheckout.setOnClickListener {
-            if (cartItems.isNotEmpty()) {
-                checkoutOrder()
-            } else {
-                Toast.makeText(requireContext(), "Your cart is empty", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        binding.btnCheckout.setOnClickListener {
+//            if (cartItems.isNotEmpty()) {
+//                checkoutOrder()
+//            } else {
+//                Toast.makeText(requireContext(), "Your cart is empty", Toast.LENGTH_SHORT).show()
+//            }
+//        }
     }
 
     private fun setupRecyclerView() {
@@ -80,25 +80,24 @@ class CartFragment : Fragment() {
             }
         )
 
-        binding.recyclerViewCart.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = cartAdapter
-        }
+//        binding.recyclerViewCart.apply {
+//            layoutManager = LinearLayoutManager(context)
+//            adapter = cartAdapter
+//        }
     }
 
     private fun loadCartItems() {
-        binding.swipeRefreshLayout.isRefreshing = true
 
         if (userId == null) {
             Toast.makeText(requireContext(), "User not logged in", Toast.LENGTH_SHORT).show()
-            binding.swipeRefreshLayout.isRefreshing = false
+
             return
         }
 
         cartRepository.getCartItems(userId!!) { items, success, message ->
             if (_binding == null) return@getCartItems
 
-            binding.swipeRefreshLayout.isRefreshing = false
+//            binding.swipeRefreshLayout.isRefreshing = false
 
             if (success && items != null) {
                 cartItems.clear()
@@ -106,7 +105,7 @@ class CartFragment : Fragment() {
                 loadProductsForCartItems()
             } else {
                 Toast.makeText(context, "Failed to load cart items: $message", Toast.LENGTH_SHORT).show()
-                toggleEmptyState()
+//                toggleEmptyState()
             }
         }
     }
@@ -114,7 +113,7 @@ class CartFragment : Fragment() {
     private fun loadProductsForCartItems() {
         if (cartItems.isEmpty()) {
             updateCartSummary()
-            toggleEmptyState()
+//            toggleEmptyState()
             return
         }
 
@@ -133,7 +132,7 @@ class CartFragment : Fragment() {
                 if (loadedCount >= cartItems.size) {
                     cartAdapter.notifyDataSetChanged()
                     updateCartSummary()
-                    toggleEmptyState()
+//                    toggleEmptyState()
                 }
             }
         }
@@ -149,7 +148,7 @@ class CartFragment : Fragment() {
                     cartItems.removeAt(position)
                     cartAdapter.notifyItemRemoved(position)
                     updateCartSummary()
-                    toggleEmptyState()
+//                    toggleEmptyState()
                 }
                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
             } else {
@@ -194,23 +193,23 @@ class CartFragment : Fragment() {
         }
 
         val formatter = NumberFormat.getCurrencyInstance(Locale.US)
-        binding.textSubtotal.text = formatter.format(subtotal)
-        binding.textShipping.text = if (subtotal > 0) formatter.format(5.99) else formatter.format(0)
-        binding.textTotal.text = if (subtotal > 0) formatter.format(subtotal + 5.99) else formatter.format(0)
-        binding.textItemCount.text = "Items ($totalItems)"
+//        binding.textSubtotal.text = formatter.format(subtotal)
+//        binding.textShipping.text = if (subtotal > 0) formatter.format(5.99) else formatter.format(0)
+//        binding.textTotal.text = if (subtotal > 0) formatter.format(subtotal + 5.99) else formatter.format(0)
+//        binding.textItemCount.text = "Items ($totalItems)"
     }
 
-    private fun toggleEmptyState() {
-        if (_binding == null) return
-
-        if (cartItems.isEmpty()) {
-            binding.emptyStateLayout.visibility = View.VISIBLE
-            binding.cartContentLayout.visibility = View.GONE
-        } else {
-            binding.emptyStateLayout.visibility = View.GONE
-            binding.cartContentLayout.visibility = View.VISIBLE
-        }
-    }
+//    private fun toggleEmptyState() {
+//        if (_binding == null) return
+//
+//        if (cartItems.isEmpty()) {
+//            binding.emptyStateLayout.visibility = View.VISIBLE
+//            binding.cartContentLayout.visibility = View.GONE
+//        } else {
+//            binding.emptyStateLayout.visibility = View.GONE
+//            binding.cartContentLayout.visibility = View.VISIBLE
+//        }
+//    }
 
     private fun checkoutOrder() {
         if (_binding == null) return
@@ -219,7 +218,7 @@ class CartFragment : Fragment() {
         cartItems.clear()
         cartAdapter.notifyDataSetChanged()
         updateCartSummary()
-        toggleEmptyState()
+//        toggleEmptyState()
     }
 
     override fun onDestroyView() {

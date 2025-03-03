@@ -62,13 +62,13 @@ class BookDetailFragment : Fragment() {
     private fun populateBookDetails(product: ProductModel) {
         binding.bookTitle.text = product.productName
         binding.bookAuthor.text = product.author
-        binding.bookDescription.text = product.descripti
+//        binding.bookDescription.text = product.descripti
         binding.bookPrice.text = "$${product.price}"
         binding.bookImage.setImageResource(product.imageRes)
     }
 
     private fun addToCart(product: ProductModel) {
-        loadingUtils.show()
+        loadingUtils.showLoading()
         val cartModel = CartModel(
             userId = userId!!,
             productId = product.productId,

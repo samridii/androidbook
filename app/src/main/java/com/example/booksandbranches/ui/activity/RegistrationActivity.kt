@@ -44,7 +44,7 @@ class RegistrationActivity : AppCompatActivity() {
             val phone = binding.registerContact.text.toString().trim()
 
             if (validateInputs(email, password, firstName, lastName, address, phone)) {
-                loadingUtils.show() // Show loading dialog
+                loadingUtils.showLoading() // Show loading dialog
                 userViewModel.signup(email, password) { success, message, userId ->
                     if (success) {
                         val userModel = UserModel(userId, firstName, lastName, address, phone, email)

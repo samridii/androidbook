@@ -41,8 +41,8 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.editPassword.text.toString().trim()
 
             if (validateInputs(email, password)) {
-                loadingUtils.show() // Show loading dialog
-                userViewModel.login(email, password) { success, message ->
+                loadingUtils.showLoading() // Show loading dialog
+                userViewModel.login(email, password) { success: Boolean, message: String ->
                     loadingUtils.dismiss() // Hide loading dialog
                     if (success) {
                         Toast.makeText(this, message, Toast.LENGTH_LONG).show()

@@ -3,6 +3,7 @@ package com.example.booksandbranches.repository
 import com.example.booksandbranches.model.UserModel
 import com.google.firebase.auth.FirebaseUser
 
+
 interface UserRepository {
     fun login(email: String, password: String, callback: (Boolean, String) -> Unit)
     fun signup(email: String, password: String, callback: (Boolean, String, String) -> Unit)

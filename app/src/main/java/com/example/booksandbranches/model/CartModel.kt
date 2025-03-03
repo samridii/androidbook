@@ -2,9 +2,7 @@ package com.example.booksandbranches.model
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.google.firebase.database.IgnoreExtraProperties
 
-@IgnoreExtraProperties
 data class CartModel(
     var cartId: String = "",
     var userId: String = "",

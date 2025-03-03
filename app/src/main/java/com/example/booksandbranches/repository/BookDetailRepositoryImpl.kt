@@ -2,14 +2,13 @@ package com.example.booksandbranches.repository
 
 import com.example.booksandbranches.model.CartModel
 import com.example.booksandbranches.model.ProductModel
-import com.example.booksandbranches.utils.Result
 import com.google.firebase.firestore.FirebaseFirestore
 
 class BookDetailRepositoryImpl : BookDetailRepository {
 
     private val db = FirebaseFirestore.getInstance()
 
-    override fun getBookById(bookId: String, callback: (Result<ProductModel>) -> Unit) {
+    override fun getBookById(bookId: String, callback: (ProductModel?) -> Unit) {
         db.collection("books")
             .document(bookId)
             .get()
@@ -17,27 +16,27 @@ class BookDetailRepositoryImpl : BookDetailRepository {
                 if (document != null && document.exists()) {
                     val book = document.toObject(ProductModel::class.java)
                     if (book != null) {
-                        callback(Result.success(book))
+                        callback(book)
                     } else {
-                        callback(Result.Error("Failed to parse book data"))
+                        callback(null)
                     }
                 } else {
-                    callback(Result.Error("Book not found"))
+                    callback(null)
                 }
             }
             .addOnFailureListener { exception ->
-                callback(Result.Error(exception.message ?: "Failed to fetch book details"))
+                callback(null)
             }
     }
 
-    override fun addToCart(cartModel: CartModel, callback: (Result<Boolean>) -> Unit) {
+    override fun addToCart(cartModel: CartModel, callback: (Boolean) -> Unit) {
         db.collection("carts")
             .add(cartModel)
             .addOnSuccessListener {
-                callback(Result.success(true))
+                callback(true)
             }
             .addOnFailureListener { exception ->
-                callback(Result.Error(exception.message ?: "Failed to add to cart"))
+                callback(false)
             }
     }
 }

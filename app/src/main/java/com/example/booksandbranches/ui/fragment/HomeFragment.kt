@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.booksandbranches.R
 import com.example.booksandbranches.adapter.ProductAdapter
 import com.example.booksandbranches.databinding.FragmentHomeBinding
+import com.example.booksandbranches.model.BookDetailModel
 import com.example.booksandbranches.model.ProductModel
 import com.example.booksandbranches.model.CartModel
 import com.example.booksandbranches.repository.CartRepositoryImpl
@@ -75,7 +76,7 @@ class HomeFragment : Fragment(), ProductAdapter.ProductClickListener {
         )
 
         // Update adapter with new data
-        productAdapter.updateProducts(products)
+//        productAdapter.updateProducts(products)
 
         // Show/hide empty state
         toggleEmptyState(products.isEmpty())
@@ -91,8 +92,16 @@ class HomeFragment : Fragment(), ProductAdapter.ProductClickListener {
         }
     }
 
-    override fun onAddToCartClicked(product: ProductModel, position: Int) {
-        // Ensure the user is logged in
+
+
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    override fun onAddToCartClicked(book: BookDetailModel, position: Int) {
         if (userId == null) {
             Toast.makeText(requireContext(), "Please log in to add items to the cart", Toast.LENGTH_SHORT).show()
             return
@@ -100,27 +109,23 @@ class HomeFragment : Fragment(), ProductAdapter.ProductClickListener {
 
         val cartModel = CartModel(
             userId = userId!!, // Use the dynamically fetched userId
-            productId = product.productId,
+            productId = book.bookId,
             quantity = 1,
-            price = product.price
+            price = book.price
         )
 
         // Use CartRepositoryImpl directly
         cartRepository.addToCart(cartModel) { success, message ->
             if (success) {
-                Toast.makeText(requireContext(), "${product.productName} added to cart", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "${book.title} added to cart", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(requireContext(), "Failed to add to cart: $message", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    override fun onProductClicked(product: ProductModel, position: Int) {
-        Toast.makeText(requireContext(), "Viewing ${product.productName}", Toast.LENGTH_SHORT).show()
-    }
+    override fun onProductClicked(book: BookDetailModel, position: Int) {
+        Toast.makeText(requireContext(), "Viewing ${book.title}", Toast.LENGTH_SHORT).show()
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

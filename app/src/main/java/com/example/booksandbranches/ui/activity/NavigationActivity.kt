@@ -36,10 +36,10 @@ class NavigationActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
             try {
                 when (menuItem.itemId) {
-                    R.id.menuHome -> replaceFragment(HomeFragment())
-                    R.id.menuBookDetail -> replaceFragment(BookDetailFragment()) // Replaced WishlistFragment with BookDetailFragment
-                    R.id.menuCart -> replaceFragment(CartFragment())
-                    R.id.menuProfile -> {
+                    R.id.home -> replaceFragment(HomeFragment())
+                    R.id.bookdetail -> replaceFragment(BookDetailFragment())
+                    R.id.cartItemCard-> replaceFragment(CartFragment())
+                    R.id.profileCard -> {
                         // Check if the user is logged in before navigating to the ProfileFragment
                         if (FirebaseAuth.getInstance().currentUser != null) {
                             replaceFragment(ProfileFragment())
